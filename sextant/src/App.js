@@ -1,24 +1,47 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+function Exhibit(props) {
+  return(
+    <div className="user-content">
+      <header className='user'>
+          <table>
+            <tr>
+              <th>Data</th>
+            </tr>
+            {props.items.map((items) => {
+              return (
+                <tr>
+                  <td>{items}</td>
+                </tr>
+              )
+          })}
+          </table>
       </header>
     </div>
+  )
+}
+function Banner() {
+  return(
+    <nav className="Banner">
+      <div className="Title">
+        <h1> Sextant</h1>
+      </div>
+    </nav>
+
+  );
+}
+
+function App() {
+  const test = [1,2,3,4,5];
+  return (
+    <div className="App">
+      <Banner />
+      <div className="content">
+        <Exhibit items={test}/>
+      </div>
+    </div>
+    
   );
 }
 

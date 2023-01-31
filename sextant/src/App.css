@@ -1,7 +1,9 @@
 .App {
   text-align: center;
 }
-
+body {
+  background-color: #669999;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +37,48 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.Banner { 
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  margin: 0 auto;
+  top:0;
+  left:0;
+  right:0;
+  height: 80px;
+  border-bottom: 1px solid;
+  border-color: white;
+  background-color: #a3c2c2;
+}
+
+
+.Title {
+    font-size: 40px;
+    font-family: "Serif";
+    color: #0666;
+    padding-left: 30px;
+    font-weight: bold;
+    
+}
+
+.content {
+  max-width: 600px;
+  margin:40px auto;
+  padding: 6px;
+}
+
+table {
+  border: 1px solid black;
+  width:800px;
+  height:200px;
+}
+
+th{
+  border-bottom: 1px solid black;
+}
+
+td{
+  text-align: center;
 }
