@@ -1,37 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
+import Exhibit from './Exhibit';
+import Banner from './Banner';
 
-function Exhibit(props) {
-  return(
-    <div className="user-content">
-      <header className='user'>
-          <table>
-            <tr>
-              <th>Data</th>
-            </tr>
-            {props.items.map((items) => {
-              return (
-                <tr>
-                  <td>{items}</td>
-                </tr>
-              )
-          })}
-          </table>
-      </header>
-    </div>
-  )
+function FetchAPI(props){
+
+
+  const input = props.input;
+  const [data,setData] = useState([]);
+
+  const ipGet = () => {
+      if(input == 1){
+          fetch('https://api.ipify.org?format=json')
+          .then((response) => response.json())
+          .then((json) => {
+          console.log(json);
+          setData(json);
+          })
+      }
+      else if (input == 2){
+          fetch('https://api64.ipify.org?format=json')
+          .then((response) => response.json())
+          .then((json) => {
+          console.log(json);
+          setData(json);
+          })
+      }
+    
+  }
+  return data;
+
 }
-function Banner() {
-  return(
-    <nav className="Banner">
-      <div className="Title">
-        <h1> Sextant</h1>
-      </div>
-    </nav>
-
-  );
-}
-
 function App() {
   const test = [1,2,3,4,5];
   return (
