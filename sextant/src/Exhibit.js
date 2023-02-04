@@ -1,9 +1,9 @@
 import "./App.css";
 import FetchAPI from "./FetchAPI";
+import Packet from "./Packet";
 import { useState } from "react";
 
 function Exhibit(props) {
-    const nums = props.items;
     const [toggleState, setToggleState] = useState(1);
 
     const toggleTab = (index) => {
@@ -21,6 +21,9 @@ function Exhibit(props) {
             <div className={toggleState === 2 ? "tabs active-tabs" : "tabs"} 
             onClick={() => toggleTab(2)}
             >ipv6</div>
+            <div className={toggleState === 3 ? "tabs active-tabs" : "tabs"} 
+            onClick={() => toggleTab(3)}
+            >Packet Latency</div>
         </div>
 
         <div className="data-blocks">
@@ -33,6 +36,11 @@ function Exhibit(props) {
                 <h2> ipv6 Address</h2>
                 <hr />
                 <FetchAPI input = {toggleState} />
+            </div>
+            <div className={toggleState === 3 ? "data active-data" : "data"}>
+                <h2> Packet Latency</h2>
+                <hr />
+                <Packet />
             </div>
         </div>
       </div>
