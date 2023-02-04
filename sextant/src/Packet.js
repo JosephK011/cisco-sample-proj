@@ -10,7 +10,6 @@ function Packet() {
         let date1 = Date.now();
         let date2 = JSON.parse(event.data);
         setNewTime(date1 - date2);
-        delay(1000);
     }
 
     return(

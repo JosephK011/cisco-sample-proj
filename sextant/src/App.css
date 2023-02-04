@@ -70,12 +70,12 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 500px;
+  width: 1000px;
   height: 300px;
   margin: 100px auto 0;
   word-break: break-all;
-  border: 1px solid black;
-  border-radius: 2px;
+  border: 3px solid #bfbfbf;
+  border-radius: 4px;
 }
 .blocks{
   display: flex;
@@ -85,13 +85,22 @@ body {
   text-align: center;
   width: 50%;
   cursor: pointer;
-  border-bottom: 1px solid black;
+  border-bottom: 3px solid #bfbfbf;
   box-sizing: content-box;
   position: relative;
   outline: none;
 }
+.tabs p{
+  width: 100%;
+  height: 100%;
+  font-size: 35px;
+  font-weight: 300;
+  color:#bfbfbf;
+  margin:0;
+  padding: 0;
+}
 .tabs:not(:last-child){
-  border-right: 1px solid black;
+  border-right: 3px solid #bfbfbf;
 }
 .data {
   padding: 20px;
@@ -101,11 +110,8 @@ body {
 }
 .data h2 {
   padding: 0px 0 5px 0px;
-}
-.data hr {
-  width: 100px;
-  height: 2px;
-  margin-bottom: 5px;
+  font-size: 35px;
+  color:#bfbfbf;
 }
 .data p {
   width: 100%;

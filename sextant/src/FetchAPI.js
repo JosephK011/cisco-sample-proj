@@ -31,7 +31,7 @@ function FetchAPI(props){
     return(
         <div className="address">
             <pre>
-                {JSON.stringify(data.ip).replace(/"/g, "")};
+                {JSON.stringify(data.ip)};
             </pre>
                 
         </div>
