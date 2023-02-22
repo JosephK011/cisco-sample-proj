@@ -1,21 +1,17 @@
+import './Packet.css';
 import { useState, useEffect } from "react";
 function Packet() {
     const websocket = new WebSocket("ws://localhost:55455");
+    const [newTime, setNewTime] = useState(0);
 
-    const delay = (ms) => new Promise(
-        resolve => setTimeout(resolve, ms)
-    );
-    const [newTime, setNewTime] = useState(1);
     websocket.onmessage = (event) => {
-        let date1 = Date.now();
-        let date2 = JSON.parse(event.data);
-        setNewTime(date1 - date2);
+        setNewTime(new Date().getTime() - event.data);
     }
 
     return(
-        <div>
-            <p>{newTime} ms</p>
-        </div>
+        <span className='latency'>
+            {newTime} ms
+        </span>
     );
 }
 export default Packet;

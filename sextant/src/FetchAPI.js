@@ -29,12 +29,9 @@ function FetchAPI(props){
         ipGet();
     }, []);
     return(
-        <div className="address">
-            <pre>
-                {JSON.stringify(data.ip)};
-            </pre>
-                
-        </div>
+        <span className="address">
+            {data.ip}  
+        </span>
     );
   
 }
